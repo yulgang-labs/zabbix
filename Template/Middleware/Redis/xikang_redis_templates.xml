@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+zabbix_agentd.conf
+
+UserParameter=redis_stats[*],/bin/redis-cli -h 127.0.0.1 -p $1 info|grep $2|cut -d : -f2
+UserParameter=redis_config[*],/bin/redis-cli -h 127.0.0.1 -p $1 config get $2|awk 'NR>1' 
+-->
 <zabbix_export>
     <version>2.0</version>
     <date>2016-05-18T09:00:04Z</date>
